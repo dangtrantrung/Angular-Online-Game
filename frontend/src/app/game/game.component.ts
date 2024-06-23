@@ -9,12 +9,14 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
+startGame() {
+throw new Error('Method not implemented.')
+}
   // gameId: string
   role = 'operative'
   // words
 
-  constructor() // private route: ActivatedRoute, // private socketIoService: SocketioService,
-  // private snackbar: MatSnackBar,
+  constructor() // private snackbar: MatSnackBar, // private route: ActivatedRoute, // private socketIoService: SocketioService,
   {}
 
   ngOnInit(): void {
@@ -25,9 +27,9 @@ export class GameComponent implements OnInit {
     // this.recieveGameUpdate()
   }
 
-  // nextGame() {
-  //   this.socketIoService.startGame(this.gameId);
-  // }
+  nextGame() {
+    // this.socketIoService.startGame(this.gameId);
+  }
 
   // startGame() {
   //   this.socketIoService.startGame(this.gameId);
