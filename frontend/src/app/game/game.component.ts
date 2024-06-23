@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 // import { MatSnackBar } from '@angular/material/snack-bar'
 import { ActivatedRoute } from '@angular/router'
+import { SocketioService } from 'app/services/socketio.service'
 // import { SocketioService } from 'src/app/services/socketio.service';
 
 @Component({
@@ -9,19 +10,20 @@ import { ActivatedRoute } from '@angular/router'
   styleUrls: ['./game.component.css'],
 })
 export class GameComponent implements OnInit {
-startGame() {
-throw new Error('Method not implemented.')
-}
+  startGame() {
+    throw new Error('Method not implemented.')
+  }
   // gameId: string
   role = 'operative'
   // words
 
-  constructor() // private snackbar: MatSnackBar, // private route: ActivatedRoute, // private socketIoService: SocketioService,
-  {}
+  constructor(
+    private socketIoService: SocketioService, // private snackbar: MatSnackBar, // private route: ActivatedRoute, // ,
+  ) {}
 
   ngOnInit(): void {
     // this.gameId = this.route.snapshot.paramMap.get('id');
-    // this.socketIoService.connect(this.gameId);
+    this.socketIoService.connect()
     // this.recieveJoinedPlayers()
     // this.recieveStartGame()
     // this.recieveGameUpdate()

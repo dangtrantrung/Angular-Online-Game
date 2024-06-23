@@ -7,7 +7,8 @@ import { AppComponent } from './app.component'
 import { LobbyComponent } from './lobby/lobby.component'
 import { GameComponent } from './game/game.component'
 import { AppRoutingModule } from './app-routing.module'
-import { MaterialModule } from './material/material.module'
+import { SocketioService } from './services/socketio.service'
+// import { MaterialModule } from './material/material.module'
 @NgModule({
   declarations: [AppComponent, LobbyComponent, GameComponent],
   imports: [
@@ -15,9 +16,9 @@ import { MaterialModule } from './material/material.module'
     FormsModule,
     HttpModule,
     AppRoutingModule,
-    MaterialModule,
+    // MaterialModule,
   ],
-  providers: [],
+  providers: [SocketioService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
