@@ -3,7 +3,6 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { SocketioService } from 'app/services/socketio.service'
 // import { SocketioService } from 'src/app/services/socketio.service';
-
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
@@ -13,17 +12,22 @@ export class GameComponent implements OnInit {
   startGame() {
     throw new Error('Method not implemented.')
   }
-  // gameId: string
+  gameId: string
   role = 'operative'
   // words
 
   constructor(
-    private socketIoService: SocketioService, // private snackbar: MatSnackBar, // private route: ActivatedRoute, // ,
+    private socketIoService: SocketioService, // private snackbar: MatSnackBar,
+    private route: ActivatedRoute, // ,
   ) {}
 
   ngOnInit(): void {
-    // this.gameId = this.route.snapshot.paramMap.get('id');
-    this.socketIoService.connect()
+    // this.gameId = this.route.snapshot.params['id']
+    this.gameId = this.route.snapshot.params['id']
+    console.log('this.gameId', this.gameId)
+
+    this.socketIoService.connect(this.gameId)
+    console.log('this.gameId', this.gameId)
     // this.recieveJoinedPlayers()
     // this.recieveStartGame()
     // this.recieveGameUpdate()

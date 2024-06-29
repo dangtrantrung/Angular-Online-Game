@@ -8,9 +8,11 @@ export class SocketioService {
 
   constructor() {}
 
-  connect() {
+  connect(gameId) {
+    // this.socket = io(environment.SOCKET_ENDPOINT)
+    // this.socket.emit('joinGame', { gameId: gameId })
     this.socket = io(environment.SOCKET_ENDPOINT)
-    // this.socket.emit('joinGame', { gameId: gameId });
+    this.socket.emit('joinGame', { gameId: gameId })
     console.log('socket.io work')
   }
 }
