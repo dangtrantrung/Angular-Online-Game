@@ -4,14 +4,12 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "dev": "nodemon index",
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "dev": "nodemon index"
     },
-    "author": "",
+    "author": "Sander Buchheim",
     "license": "ISC",
     "dependencies": {
-        "express": "^4.19.2",
-        "nodemon": "^3.1.4",
-        "socket.io": "^3.1.2"
+        "express": "^4.17.1",
+        "socket.io": "^3.0.4"
     }
 }
